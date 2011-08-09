@@ -1,0 +1,19 @@
+Very early prototype of a fine-graind authorization module.
+
+All specs (rspec) currently pass.
+
+TODO: 
+
+Use this module in the context of a rails app
+
+ISSUES:
+
+-Not sure how to override initialize in rails?
+-Is there a better way to achieve the same goal, namely, protecting methods using a series of tags
+
+First Thoughts:
+
+-Override send/__send__ , making an authorized_send instead of doing the auth checks upon initialization?
+-Use a before_filter?
+-Detach all methods usig to_proc and redefine ones for which the user is authorized
+-Hackery with alias_method_chain
